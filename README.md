@@ -8,9 +8,9 @@ X - [https://twitter.com/TheLocalLab_](https://x.com/TheLocalLab_) <br />
 Youtube - [https://www.youtube.com/@TheLocalLab](https://www.youtube.com/@TheLocalLab) <br />
 Patreon - [https://www.patreon.com/TheLocalLab](https://www.patreon.com/TheLocalLab)<br /> <br /> <br />
 
-| Notebook                                                                                                                                                                      | Info           |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
-| [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1bG2RmkOVLVFPGsEm1RQIn5zsk2t3NRWS#scrollTo=lU6VoX3zs66v) | Flux Gym Colab |
+| Notebook                                                                                                                                                                                                                | Info           |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
+| <a href="https://colab.research.google.com/drive/1bG2RmkOVLVFPGsEm1RQIn5zsk2t3NRWS#scrollTo=lU6VoX3zs66v" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> | Flux Gym Colab |
 
 <br /> <br />For those who prefer visual guidance, I've created a comprehensive step-by-step video tutorial demonstrating training Flux Lora Models with this Flux Gym Colab. This guide will walk you through the settings and steps to creating your own Loras. <br /> <br />
 
