@@ -358,11 +358,11 @@ def download(base_model):
         hf_hub_download(repo_id="comfyanonymous/flux_text_encoders", local_dir=clip_folder, filename="clip_l.safetensors")
 
     # download t5xxl
-    t5xxl_path = os.path.join(clip_folder, "t5xxl_fp16.safetensors")
+    t5xxl_path = os.path.join(clip_folder, "t5xxl_fp8.safetensors")
     if not os.path.exists(t5xxl_path):
-        print(f"download t5xxl_fp16.safetensors")
+        print(f"download t5xxl_fp8.safetensors")
         gr.Info(f"Downloading t5xxl...")
-        hf_hub_download(repo_id="comfyanonymous/flux_text_encoders", local_dir=clip_folder, filename="t5xxl_fp16.safetensors")
+        hf_hub_download(repo_id="comfyanonymous/flux_text_encoders", local_dir=clip_folder, filename="t5xxl_fp8.safetensors")
 
 
 def resolve_path(p):
@@ -408,7 +408,6 @@ def gen_sh(
     if len(sample_prompts) > 0 and sample_every_n_steps > 0:
         sample = f"""--sample_prompts={sample_prompts_path} --sample_every_n_steps="{sample_every_n_steps}" {line_break}"""
 
-
     ############# Optimizer args ########################
 #    if vram == "8G":
 #        optimizer = f"""--optimizer_type adafactor {line_break}
@@ -437,15 +436,7 @@ def gen_sh(
 
 
     #######################################################
-    model_config = models[base_model]
-    model_file = model_config["file"]
-    repo = model_config["repo"]
-    if base_model == "flux-dev" or base_model == "flux-schnell":
-        model_folder = "models/unet"
-    else:
-        model_folder = f"models/unet/{repo}"
-    model_path = os.path.join(model_folder, model_file)
-    pretrained_model_path = resolve_path(model_path)
+    pretrained_model_path = resolve_path("models/unet/flux1-dev-fp8.safetensors")
 
     clip_path = resolve_path("models/clip/clip_l.safetensors")
     t5_path = resolve_path("models/clip/t5xxl_fp16.safetensors")
